@@ -95,9 +95,8 @@ public class StudentDatabase implements AutoCloseable,java.io.Closeable {
         int length = length();
         checkIndex(index,length + 1);
         ensureCapacity(length + 1);
-        for (int i=index;i<length;i++)
-            setStudent(getStudent(i),i+1);
-
+        for (int i=length - 1;i>=length;i--)        
+            setStudent(getStudent(i),i+1);        
         setStudent(s,index);
     }
 
